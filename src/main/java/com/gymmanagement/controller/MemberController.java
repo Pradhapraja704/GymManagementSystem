@@ -27,6 +27,21 @@ public class MemberController {
         return memberService.getAllMembers();
     }
 
+    @GetMapping("/page")
+    public List<MemberResponseDTO> getMembersWithPagination(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "5") int size,
+            @RequestParam(defaultValue = "memberId") String sortBy,
+            @RequestParam(defaultValue = "asc") String direction) {
+
+        return memberService.getMembersWithPagination(
+                page,
+                size,
+                sortBy,
+                direction
+        );
+    }
+
     @GetMapping("/search")
     public List<MemberResponseDTO> searchMembers(@RequestParam String keyword) {
         return memberService.searchMembers(keyword);

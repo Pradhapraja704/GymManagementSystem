@@ -19,4 +19,10 @@ public interface MemberService {
 
     List<MemberResponseDTO> searchMembers(String keyword);
 
+    List<MemberResponseDTO> getMembersWithPagination(
+            int page,
+            int size,
+            String sortBy,
+            String direction
+    );
 }
