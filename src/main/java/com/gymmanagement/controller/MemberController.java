@@ -27,7 +27,12 @@ public class MemberController {
         return memberService.getAllMembers();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/search")
+    public List<MemberResponseDTO> searchMembers(@RequestParam String keyword) {
+        return memberService.searchMembers(keyword);
+    }
+
+    @GetMapping("/{id:\\d+}")
     public MemberResponseDTO getMemberById(@PathVariable Long id) {
         return memberService.getMemberById(id);
     }

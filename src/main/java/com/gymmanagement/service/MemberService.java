@@ -17,4 +17,6 @@ public interface MemberService {
 
     void deleteMember(Long id);
 
+    List<MemberResponseDTO> searchMembers(String keyword);
+
 }

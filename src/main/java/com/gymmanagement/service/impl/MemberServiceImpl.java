@@ -86,4 +86,19 @@ public class MemberServiceImpl implements MemberService {
     public void deleteMember(Long id) {
         memberRepository.deleteById(id);
     }
+
+    @Override
+    public List<MemberResponseDTO> searchMembers(String keyword) {
+
+        return memberRepository
+                .findByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCaseOrEmailContainingIgnoreCaseOrPhoneNumberContainingIgnoreCase(
+                        keyword,
+                        keyword,
+                        keyword,
+                        keyword
+                )
+                .stream()
+                .map(memberMapper::toResponseDTO)
+                .collect(Collectors.toList());
+    }
 }
