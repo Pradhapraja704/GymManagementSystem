@@ -64,6 +64,77 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.CONFLICT);
     }
 
+    @ExceptionHandler(TrainerAssignmentNotFoundException.class)
+    public ResponseEntity<ApiResponse<Object>> handleTrainerAssignmentNotFound(TrainerAssignmentNotFoundException ex) {
+
+        ApiResponse<Object> response =
+                new ApiResponse<>(false, ex.getMessage(), null);
+
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(DuplicateTrainerAssignmentException.class)
+    public ResponseEntity<ApiResponse<Object>> handleDuplicateTrainerAssignment(DuplicateTrainerAssignmentException ex) {
+
+        ApiResponse<Object> response =
+                new ApiResponse<>(false, ex.getMessage(), null);
+
+        return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+    }
+    @ExceptionHandler(WorkoutPlanNotFoundException.class)
+    public ResponseEntity<ApiResponse<Object>> handleWorkoutPlanNotFound(WorkoutPlanNotFoundException ex) {
+
+        ApiResponse<Object> response =
+                new ApiResponse<>(false, ex.getMessage(), null);
+
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(DuplicateWorkoutPlanException.class)
+    public ResponseEntity<ApiResponse<Object>> handleDuplicateWorkoutPlan(DuplicateWorkoutPlanException ex) {
+
+        ApiResponse<Object> response =
+                new ApiResponse<>(false, ex.getMessage(), null);
+
+        return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(MembershipPlanNotFoundException.class)
+    public ResponseEntity<ApiResponse<Object>> handleMembershipPlanNotFound(MembershipPlanNotFoundException ex) {
+
+        ApiResponse<Object> response =
+                new ApiResponse<>(false, ex.getMessage(), null);
+
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(DuplicateMembershipPlanException.class)
+    public ResponseEntity<ApiResponse<Object>> handleDuplicateMembershipPlan(DuplicateMembershipPlanException ex) {
+
+        ApiResponse<Object> response =
+                new ApiResponse<>(false, ex.getMessage(), null);
+
+        return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(DietPlanNotFoundException.class)
+    public ResponseEntity<ApiResponse<Object>> handleDietPlanNotFound(DietPlanNotFoundException ex) {
+
+        ApiResponse<Object> response =
+                new ApiResponse<>(false, ex.getMessage(), null);
+
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(DuplicateDietPlanException.class)
+    public ResponseEntity<ApiResponse<Object>> handleDuplicateDietPlan(DuplicateDietPlanException ex) {
+
+        ApiResponse<Object> response =
+                new ApiResponse<>(false, ex.getMessage(), null);
+
+        return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ApiResponse<Object>> handleValidation(MethodArgumentNotValidException ex) {
 
