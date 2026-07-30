@@ -28,6 +28,42 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.CONFLICT);
     }
 
+    @ExceptionHandler(TrainerNotFoundException.class)
+    public ResponseEntity<ApiResponse<Object>> handleTrainerNotFound(TrainerNotFoundException ex) {
+
+        ApiResponse<Object> response =
+                new ApiResponse<>(false, ex.getMessage(), null);
+
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(DuplicateTrainerException.class)
+    public ResponseEntity<ApiResponse<Object>> handleDuplicateTrainer(DuplicateTrainerException ex) {
+
+        ApiResponse<Object> response =
+                new ApiResponse<>(false, ex.getMessage(), null);
+
+        return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(AttendanceNotFoundException.class)
+    public ResponseEntity<ApiResponse<Object>> handleAttendanceNotFound(AttendanceNotFoundException ex) {
+
+        ApiResponse<Object> response =
+                new ApiResponse<>(false, ex.getMessage(), null);
+
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(DuplicateAttendanceException.class)
+    public ResponseEntity<ApiResponse<Object>> handleDuplicateAttendance(DuplicateAttendanceException ex) {
+
+        ApiResponse<Object> response =
+                new ApiResponse<>(false, ex.getMessage(), null);
+
+        return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ApiResponse<Object>> handleValidation(MethodArgumentNotValidException ex) {
 
