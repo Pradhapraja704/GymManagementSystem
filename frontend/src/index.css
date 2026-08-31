@@ -1,0 +1,434 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f5f7;
+  color: #222;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Login Page */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f5f7;
+}
+
+.login-card {
+  width: 400px;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  color: #777;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  border-color: #333;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #111;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.login-button:hover {
+  background: #333;
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-error {
+  margin-bottom: 15px;
+  color: #d32f2f;
+  font-size: 14px;
+  text-align: center;
+}
+/* Dashboard Layout */
+
+.dashboard-layout {
+  min-height: 100vh;
+  display: flex;
+}
+
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: #111;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar-logo {
+  padding: 25px 20px;
+  border-bottom: 1px solid #333;
+}
+
+.sidebar-logo h2 {
+  font-size: 24px;
+}
+
+.sidebar-logo span {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px;
+  gap: 5px;
+}
+
+.sidebar-nav a {
+  color: #bbb;
+  text-decoration: none;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  background: #333;
+  color: white;
+}
+
+.dashboard-main {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+}
+
+.navbar {
+  height: 70px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.navbar h2 {
+  font-size: 20px;
+}
+
+.logout-button {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #111;
+  color: white;
+}
+
+.logout-button:hover {
+  background: #333;
+}
+
+.dashboard-content {
+  padding: 30px;
+}
+
+/* Dashboard */
+
+.dashboard-page {
+  width: 100%;
+}
+
+.page-header {
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.page-header p {
+  color: #777;
+  font-size: 14px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+}
+
+.stat-card h3 {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.stat-card strong {
+  font-size: 30px;
+}
+/* Common Page Styles */
+
+.page-container {
+  width: 100%;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+.page-header p {
+  color: #777;
+  font-size: 14px;
+}
+
+/* Table */
+
+.table-container {
+  width: 100%;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.data-table th {
+  background: #f7f7f7;
+  text-align: left;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+}
+
+.data-table td {
+  padding: 15px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.data-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Empty State */
+
+.empty-state {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  color: #777;
+}
+
+/* Forms */
+
+.form-card {
+  max-width: 800px;
+  background: white;
+  padding: 30px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-group input {
+  width: auto;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.primary-button,
+.cancel-button {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.primary-button {
+  background: #111;
+  color: white;
+}
+
+.primary-button:hover {
+  background: #333;
+}
+
+.cancel-button {
+  background: #eee;
+  color: #222;
+}
+
+.cancel-button:hover {
+  background: #ddd;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .dashboard-main {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-button,
+.delete-button {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.edit-button {
+  background: #eee;
+  color: #222;
+}
+
+.edit-button:hover {
+  background: #ddd;
+}
+
+.delete-button {
+  background: #111;
+  color: white;
+}
+
+.delete-button:hover {
+  background: #333;
+}
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  background: white;
+}
+
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #333;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
